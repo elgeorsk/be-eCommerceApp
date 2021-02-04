@@ -21,7 +21,6 @@ import com.example.demo.model.requests.CreateUserRequest;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
@@ -48,7 +47,7 @@ public class UserController {
 	public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
 		User user = new User();
 		user.setUsername(createUserRequest.getUsername());
-		log.info("Get username - ", user.getUsername());
+		log.info("Get username - " + user.getUsername());
 		Cart cart = new Cart();
 
 		cartRepository.save(cart);
