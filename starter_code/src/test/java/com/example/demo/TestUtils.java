@@ -1,10 +1,15 @@
 package com.example.demo;
 
 import com.example.demo.model.persistence.Cart;
+import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.User;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Column;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestUtils {
 
@@ -49,4 +54,42 @@ public class TestUtils {
         return user;
     }
 
+    public static Item newItem(){
+        Item item = new Item();
+
+        item.setId(1l);
+        item.setName("testProduct");
+        item.setPrice(BigDecimal.valueOf(99.9));
+        item.setDescription("testDescription");
+
+        return item;
+    }
+
+    public static List<Item> listOfItems(){
+        List<Item> items = new ArrayList<>();
+
+        Item item = new Item();
+        Item item1 = new Item();
+        Item item2 = new Item();
+
+        item.setId(1l);
+        item.setName("testProduct");
+        item.setPrice(BigDecimal.valueOf(99.9));
+        item.setDescription("testDescription");
+        items.add(item);
+
+        item1.setId(2l);
+        item1.setName("testProduct2");
+        item1.setPrice(BigDecimal.valueOf(199.9));
+        item1.setDescription("testDescription2");
+        items.add(item1);
+
+        item2.setId(3l);
+        item2.setName("testProduct3");
+        item2.setPrice(BigDecimal.valueOf(299.9));
+        item2.setDescription("testDescription3");
+        items.add(item2);
+
+        return items;
+    }
 }
