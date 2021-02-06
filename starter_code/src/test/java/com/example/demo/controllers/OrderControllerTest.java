@@ -86,7 +86,7 @@ public class OrderControllerTest {
         userOrder.setUser(user);
         userOrder.setItems(items);
         userOrder.setTotal(BigDecimal.ZERO);
-        
+
         for(Item item: items) {
             userOrder.getTotal().add(item.getPrice()); // add price to the total
         }
