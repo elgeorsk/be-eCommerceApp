@@ -1,0 +1,133 @@
+Started by user elgeor
+Running as SYSTEM
+Building in workspace C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\eCommerceApp
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+The recommended git tool is: NONE
+using credential 77a1e4bd-db38-4181-a04a-dee81897ba37
+Cloning the remote Git repository
+Cloning repository https://github.com/elgeorsk/eCommerceApp.git
+ > git.exe init C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\eCommerceApp # timeout=10
+Fetching upstream changes from https://github.com/elgeorsk/eCommerceApp.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.24.1.windows.2'
+using GIT_ASKPASS to set credentials My GitHub
+ > git.exe fetch --tags --force --progress -- https://github.com/elgeorsk/eCommerceApp.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe config remote.origin.url https://github.com/elgeorsk/eCommerceApp.git # timeout=10
+ > git.exe config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 7cc88dc4e16632f925f6eb6d701835b328468eef (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 7cc88dc4e16632f925f6eb6d701835b328468eef # timeout=10
+Commit message: "Add logs - Splunk/Jenkins screens"
+First time build. Skipping changelog.
+[eCommerceApp] $ cmd.exe /C "C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\Maven\bin\mvn.cmd clean package && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:auth-course >-----------------------
+[INFO] Building auth-course 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ auth-course ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ auth-course ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\eCommerceApp\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\eCommerceApp\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ auth-course ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\eCommerceApp\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ auth-course ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.demo.controllers.CartControllerTest
+14:23:14.929 [main] INFO com.example.demo.controllers.UserControllerTest - -- Init --
+14:23:14.940 [main] INFO com.example.demo.controllers.UserControllerTest - -- Start of test  --
+14:23:14.940 [main] INFO com.example.demo.controllers.UserControllerTest - Get user
+14:23:14.941 [main] INFO com.example.demo.controllers.UserControllerTest - Get item
+14:23:15.021 [main] INFO com.example.demo.controllers.UserControllerTest - -- End of test  --
+14:23:15.038 [main] INFO com.example.demo.controllers.UserControllerTest - -- Init --
+14:23:15.039 [main] INFO com.example.demo.controllers.UserControllerTest - -- Start of test  --
+14:23:15.041 [main] INFO com.example.demo.controllers.UserControllerTest - Get user
+14:23:15.041 [main] INFO com.example.demo.controllers.UserControllerTest - Get list of items
+14:23:15.047 [main] INFO com.example.demo.controllers.UserControllerTest - -- End of test  --
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.873 s - in com.example.demo.controllers.CartControllerTest
+[INFO] Running com.example.demo.controllers.ItemControllerTest
+14:23:15.078 [main] INFO com.example.demo.controllers.ItemControllerTest - -- Init --
+14:23:15.080 [main] INFO com.example.demo.controllers.ItemControllerTest - -- Start of test  --
+14:23:15.084 [main] INFO com.example.demo.controllers.ItemControllerTest - -- End of test  --
+14:23:15.090 [main] INFO com.example.demo.controllers.ItemControllerTest - -- Init --
+14:23:15.090 [main] INFO com.example.demo.controllers.ItemControllerTest - -- Start of test  --
+14:23:15.093 [main] INFO com.example.demo.controllers.ItemControllerTest - -- End of test  --
+14:23:15.108 [main] INFO com.example.demo.controllers.ItemControllerTest - -- Init --
+14:23:15.108 [main] INFO com.example.demo.controllers.ItemControllerTest - -- Start of test  --
+14:23:15.122 [main] INFO com.example.demo.controllers.ItemControllerTest - -- End of test  --
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in com.example.demo.controllers.ItemControllerTest
+[INFO] Running com.example.demo.controllers.OrderControllerTest
+14:23:15.327 [main] INFO com.example.demo.controllers.UserControllerTest - -- Init --
+14:23:15.328 [main] INFO com.example.demo.controllers.UserControllerTest - -- Start of test  --
+14:23:15.328 [main] INFO com.example.demo.controllers.UserControllerTest - Get user
+14:23:15.328 [main] INFO com.example.demo.controllers.UserControllerTest - Get list of items
+14:23:15.330 [main] INFO com.example.demo.controllers.OrderController - Order created
+14:23:15.330 [main] INFO com.example.demo.controllers.UserControllerTest - -- End of test  --
+14:23:15.334 [main] INFO com.example.demo.controllers.UserControllerTest - -- Init --
+14:23:15.335 [main] INFO com.example.demo.controllers.UserControllerTest - -- Start of test  --
+14:23:15.335 [main] INFO com.example.demo.controllers.UserControllerTest - Get user
+14:23:15.335 [main] INFO com.example.demo.controllers.UserControllerTest - Get list of items
+14:23:15.338 [main] INFO com.example.demo.controllers.OrderController - Get order history
+14:23:15.339 [main] INFO com.example.demo.controllers.UserControllerTest - -- End of test  --
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 s - in com.example.demo.controllers.OrderControllerTest
+[INFO] Running com.example.demo.controllers.UserControllerTest
+14:23:15.427 [main] INFO com.example.demo.controllers.UserControllerTest - -- Init --
+14:23:15.428 [main] INFO com.example.demo.controllers.UserControllerTest - -- Start of test  --
+14:23:15.428 [main] INFO com.example.demo.controllers.UserControllerTest - User creation
+14:23:15.442 [main] INFO com.example.demo.controllers.UserController - User created
+14:23:15.442 [main] INFO com.example.demo.controllers.UserControllerTest - -- End of test  --
+14:23:15.449 [main] INFO com.example.demo.controllers.UserControllerTest - -- Init --
+14:23:15.451 [main] INFO com.example.demo.controllers.UserControllerTest - -- Start of test  --
+14:23:15.452 [main] INFO com.example.demo.controllers.UserControllerTest - User creation
+14:23:15.456 [main] INFO com.example.demo.controllers.UserController - User created
+14:23:15.458 [main] INFO com.example.demo.controllers.UserControllerTest - -- End of test  --
+14:23:15.464 [main] INFO com.example.demo.controllers.UserControllerTest - -- Init --
+14:23:15.465 [main] INFO com.example.demo.controllers.UserControllerTest - -- Start of test  --
+14:23:15.466 [main] INFO com.example.demo.controllers.UserControllerTest - User creation
+14:23:15.468 [main] INFO com.example.demo.controllers.UserController - User created
+14:23:15.469 [main] INFO com.example.demo.controllers.UserControllerTest - -- End of test  --
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in com.example.demo.controllers.UserControllerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ auth-course ---
+[INFO] Building jar: C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\eCommerceApp\target\auth-course-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.2:repackage (repackage) @ auth-course ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.436 s
+[INFO] Finished at: 2021-02-08T14:23:18+01:00
+[INFO] ------------------------------------------------------------------------
+Archiving artifacts
+Recording test results
+[Checks API] No suitable checks publisher found.
+Finished: SUCCESS
