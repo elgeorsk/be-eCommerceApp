@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,21 +48,23 @@ public class UserController {
 	public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
 		User user = new User();
 		user.setUsername(createUserRequest.getUsername());
-		log.info("Get username - " + user.getUsername());
 		Cart cart = new Cart();
 
 		cartRepository.save(cart);
 		user.setCart(cart);
 
 		// Basic password validation
-		if(createUserRequest.getPassword().length()< 7 || !createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())){
-			// log.error("Error - Either length is less than 7 or pass and conf pass do not match. Unable to create ", createUserRequest.getUsername());
+		if(createUserRequest.getPassword().length()< 7 || !createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())
+		 || userRepository.findByUsername(createUserRequest.getUsername())!= null && userRepository.findByUsername(createUserRequest.getUsername()).getUsername().equals(createUserRequest.getUsername())) {
+			log.error("Error - Unable to create user", createUserRequest.getUsername());
 			return ResponseEntity.badRequest().build();
 		}
+
 		// encode password
 		user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
 
 		userRepository.save(user);
+		log.info("User created");
 		return ResponseEntity.ok(user);
 	}
 	
